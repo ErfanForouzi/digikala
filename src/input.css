@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "iran_Bold";
+    src: url(../src/fonts/IRANSansXFaNum-Bold.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "iran_Light";
+    src: url(../src/fonts/IRANSansXFaNum-Light.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "iran_Medium";
+    src: url(../src/fonts/IRANSansXFaNum-Medium.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "iran_Regular";
+    src: url(../src/fonts/IRANSansXFaNum-Regular.ttf) format("truetype");
+  }
+}
+html {
+  direction: rtl !important;
+  scroll-behavior: smooth !important;
+}
+body {
+  overflow-x: hidden !important;
+}
+
+input {
+  font-family: "iran_Regular";
+}
+.border_before {
+  position: relative;
+}
+.border_before::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 70%;
+  background-color: rgb(204 204 204);
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+:is(.carousel, .carousel_grid, .carousel_fresh) .swiper-button-prev::after,
+.swiper-rtl .swiper-button-next::after {
+  font-size: 15px !important;
+  color: #242424 !important;
+  background-color: white !important;
+  border-radius: 100% !important;
+  -webkit-border-radius: 100% !important;
+  -moz-border-radius: 100% !important;
+  -ms-border-radius: 100% !important;
+  -o-border-radius: 100% !important;
+  padding: 5px 10px !important;
+  font-weight: bold !important;
+  z-index: 20 !important;
+}
+
+:is(.carousel, .carousel_grid, .carousel_fresh) .swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  opacity: 0 !important;
+}
+
+.slider .swiper-button-prev{
+  top: 85%;
+  right: 50px;
+}
+.slider .swiper-button-next{
+  top: 85%;
+  right: 100px;
+}
+
+.slider .swiper-button-prev::after,
+.swiper-rtl .swiper-button-next::after{
+  font-size: 15px !important;
+  font-weight: bold !important;
+  color: #242424 !important;
+}
+
+.slider .swiper-pagination-bullet-active{
+  width: 17px !important;
+  background-color: white !important;
+  border-radius: 20px !important;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  -ms-border-radius: 20px !important;
+  -o-border-radius: 20px !important;
+  transition: width 0.6s !important;
+  -webkit-transition: width 0.6s !important;
+  -moz-transition: width 0.6s !important;
+  -ms-transition: width 0.6s !important;
+  -o-transition: width 0.6s !important;
+}
+
+
+.input_checkbox_filter input[type="checkbox"]{
+  width: 40px;
+  height: 20px;
+  background-color: #c6c6c6;
+  appearance: none;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.input_checkbox_filter input[type="checkbox"]:checked{
+background-color: #03a9f4;
+}
+
+.input_checkbox_filter input[type="checkbox"]::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius:50%;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  -ms-border-radius:50%;
+  -o-border-radius:50%;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  background-color: white;
+}
+.input_checkbox_filter input[type="checkbox"]:checked:before{
+  left: 20px;
+}
+
+
+.loader span{
+  animation: loader 2.5s linear infinite;
+  -webkit-animation: loader 2.5s linear infinite;
+}
+.loader span:nth-child(1){
+  animation-delay: 0s;
+}
+.loader span:nth-child(2){
+  animation-delay: 0.5s;
+}
+.loader span:nth-child(3){
+  animation-delay: 0.75s;
+}
+
+@keyframes loader {
+  0%,100%{
+   opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+}
